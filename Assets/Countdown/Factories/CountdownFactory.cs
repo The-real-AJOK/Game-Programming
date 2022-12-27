@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CountdownFactory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public CountdownComponent CreateCountdown()
     {
-        
-    }
+        var countdown = GameObject.Instantiate(
+            PrefabResolverUtility.CountdownPrefab,
+            Vector3.zero,
+            Quaternion.identity
+        );
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var countdownComponent = countdown.AddComponent<CountdownComponent>();
+        return countdownComponent;
     }
 }
