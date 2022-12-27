@@ -11,11 +11,11 @@ PBR materials.
 Textures resolution are 2048x2048.
 
 This package contains:
-• 109 models
-• over 100 prefabs (furniture, props...)
-• 144 materials
-• 20 tiled materials 
-• complete scene from video
+ï¿½ 109 models
+ï¿½ over 100 prefabs (furniture, props...)
+ï¿½ 144 materials
+ï¿½ 20 tiled materials 
+ï¿½ complete scene from video
 
 --------------------------------------------
 
