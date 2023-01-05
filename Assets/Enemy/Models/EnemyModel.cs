@@ -9,12 +9,6 @@ public class EnemyModel : MonoBehaviour
     private Rigidbody rigidbody;
     float currentY;
     public float FallingThreshold = -2.0f;
-    // [HideInInspector]
-    // public bool Falling = false;
-    // public bool Jumping = false;
-
-    // private Subject<bool> SphereSubjectFalling;
-    // private Subject<bool> SphereSubjectJumping;
 
     public NavMeshAgent agent;
 
@@ -109,6 +103,7 @@ public class EnemyModel : MonoBehaviour
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
+
     private void ResetAttack()
     {
         alreadyAttacked = false;
@@ -133,87 +128,8 @@ public class EnemyModel : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
-    // public IObservable<bool> SphereFalling
-    // {
-    //     get
-    //     {
-    //         return this.SphereSubjectFalling.AsObservable();
-    //     }
-    // }
-
-    // public IObservable<bool> SphereJumping
-    // {
-    //     get
-    //     {
-    //         return this.SphereSubjectJumping.AsObservable();
-    //     }
-    // }
-
-    // void Start()
-    // {
-    //     this.rigidbody = this.gameObject.GetComponent<Rigidbody>();
-    //     currentY = this.rigidbody.position.y;
-    // }
-
-    // public void Update()
-    // {
-    //     // OutOfBounds();
-    //     // SphereJumps();
-    // }
-
     public void EnableGravity()
     {
         this.rigidbody.useGravity = true;
     }
-
-    // SphereComponent()
-    // {
-    //     this.SphereSubjectFalling = new Subject<bool>();
-    //     this.SphereSubjectJumping = new Subject<bool>();
-    //     // this.SphereSubject = new Subject<Unit>();
-    // }
-
-    // private void OnCollisionEnter(Collision collision)
-    // {
-    //     this.StartCoroutine("HideAfterSeconds", ObstacleComponent.TIME_BEFORE_HIDING_AFTER_COLLISION_IN_SECONDS);
-    //     this.ObstacleCollisionSubject.OnNext(Unit.Default);
-    // }
-
-    // public void OutOfBounds()
-    // {
-    //     if (this.rigidbody.position.y < FallingThreshold)
-    //     {
-    //         Debug.Log("Falling...");
-    //         Falling = true;
-    //         this.SphereSubjectFalling.OnNext(Falling);
-    //         this.SphereSubjectFalling.OnCompleted();
-    //     }
-    //     else
-    //     {
-    //         Falling = false;
-    //     }
-
-    //     // return Falling;
-    // }
-
-    // public void SphereJumps()
-    // {
-    //     float lastY = currentY;
-    //     currentY = this.rigidbody.position.y;
-    //     Debug.Log(currentY - lastY);
-
-    //     if (currentY > lastY)
-    //     {
-    //         Debug.Log("Jumping...");
-    //         Jumping = true;
-    //         this.SphereSubjectJumping.OnNext(Jumping);
-    //     }
-    //     else
-    //     {
-    //         Debug.Log("Not jumping");
-    //         Jumping = false;
-    //     }
-
-    //     // return Falling;
-    // }
 }
