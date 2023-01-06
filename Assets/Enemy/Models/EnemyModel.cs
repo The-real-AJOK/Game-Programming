@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyModel : MonoBehaviour
 {
@@ -118,6 +119,7 @@ public class EnemyModel : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     private void OnDrawGizmosSelected()
