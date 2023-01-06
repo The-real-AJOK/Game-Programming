@@ -8,11 +8,16 @@ public class PrefabResolverUtility : MonoBehaviour
     [SerializeField]
     private GameObject enemyPrefab;
 
+    [SerializeField]
+    private GameObject playerPrefab;
+
     private static GameObject enemyPrefabStatic;
+    private static GameObject playerPrefabStatic;
 
     void Awake()
     {
         PrefabResolverUtility.enemyPrefabStatic = enemyPrefab;
+        PrefabResolverUtility.playerPrefabStatic = playerPrefab;
     }
 
     public static GameObject EnemyPrefab
@@ -20,6 +25,14 @@ public class PrefabResolverUtility : MonoBehaviour
         get
         {
             return PrefabResolverUtility.enemyPrefabStatic;
+        }
+    }
+
+    public static GameObject PlayerPrefab
+    {
+        get
+        {
+            return PrefabResolverUtility.playerPrefabStatic;
         }
     }
 
