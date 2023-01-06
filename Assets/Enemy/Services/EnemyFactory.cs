@@ -6,17 +6,13 @@ public class EnemyFactory
 {
     public EnemyComponent CreateEnemy(Vector3 position, bool mustUseGravity)
     {
-        // var enemy = GameObject.Instantiate(PrefabResolverUtility.EnemyPrefab, position, Quaternion.identity);
+        var enemy = GameObject.Instantiate(PrefabResolverUtility.EnemyPrefab, position, Quaternion.identity);
 
-        // var rigidbody = enemy.AddComponent<Rigidbody>();
-        // rigidbody.useGravity = mustUseGravity;
+        var rigidbody = enemy.AddComponent<Rigidbody>();
+        rigidbody.useGravity = mustUseGravity;
 
-        // var enemyComponent = enemy.AddComponent<EnemyComponent>();
-        // var attackComponent = enemy.AddComponent<AttackComponent>();
-        // var chaseComponent = enemy.AddComponent<ChaseComponent>();
-        // var patrolComponent = enemy.AddComponent<PatrolComponent>();
+        var enemyComponent = enemy.AddComponent<EnemyComponent>();
 
-        // return enemyComponent;
-        return null;
+        return enemyComponent;
     }
 }

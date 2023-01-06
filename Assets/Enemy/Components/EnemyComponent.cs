@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyModel : MonoBehaviour
+public class EnemyComponent : MonoBehaviour
 {
     private Rigidbody rigidbody;
     float currentY;
@@ -32,18 +32,18 @@ public class EnemyModel : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    private void Start()
+    void Start()
     {
-        var rigidbody = this.gameObject.AddComponent<Rigidbody>();
+        var rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    private void Awake()
+    void Awake()
     {
         player = GameObject.Find("PlayerObj").transform; //spawn not inject
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    public void Update()
     {
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer); //Event 1
