@@ -176,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d8110fafb63ab4337a1d4947b97bc2c1, type: 2}
+  - {fileID: 2100000, guid: e8c7a0273bc45c04b84aa1082390f6bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,9 +233,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 84833445}
     - target: {fileID: 1752401703251237988, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
+      propertyPath: health
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752401703251237988, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1130983491}
+    - target: {fileID: 1752401703251237988, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
+      propertyPath: sightRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752401703251237988, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
+      propertyPath: attackRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752401703251237988, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
+      propertyPath: walkPointRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752401703251237988, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8476709186513008585, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -246,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8476709186513008585, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4299998
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8476709186513008585, guid: 5a1f13967740e8546854f97c1a05e83f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -301,8 +321,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 11
-  m_Acceleration: 8
+  m_Speed: 100
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -523,7 +543,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1130983486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5ca5e86acac4d36971fcf42c2b960c, type: 3}
+  m_Script: {fileID: 11500000, guid: af12dcdcd53a745418c6dcb38dc4b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1130983487}
@@ -531,6 +551,8 @@ MonoBehaviour:
   camera: {fileID: 693979294}
   walkSpeed: 5
   runSpeed: 10
+  jumpSpeed: 0
+  impactThreshold: 0
 --- !u!1 &1348588083
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +690,7 @@ GameObject:
   - component: {fileID: 1704255782}
   - component: {fileID: 1704255781}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +724,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7cd37535109692a4582d46e83c53de5e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: b7e21e4d854106f4a84bd800c0a09e89, type: 2}
 --- !u!4 &1704255782
 Transform:
   m_ObjectHideFlags: 0

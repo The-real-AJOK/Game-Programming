@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour {
             return;
 
         isGrounded = true;
-        isJumping = false;
+        isJumping = true;
     }
 
     //  This will be called once only during collision
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionExit(Collision col) {
         isGrounded = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     //  Add your fall damage code here!

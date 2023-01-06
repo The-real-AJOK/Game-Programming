@@ -27,7 +27,7 @@ public class EnemyModel : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    public GameObject projectile;
+    // public GameObject projectile;
 
     //States
     public float sightRange, attackRange;
@@ -40,7 +40,7 @@ public class EnemyModel : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("PlayerObj").transform; //spawn not inject
+        player = GameObject.Find("Player").transform; //spawn not inject
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -95,9 +95,9 @@ public class EnemyModel : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            // Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            // rb.AddForce(transform.up * 8f, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;
@@ -119,7 +119,6 @@ public class EnemyModel : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     private void OnDrawGizmosSelected()
